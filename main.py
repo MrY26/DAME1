@@ -8,6 +8,9 @@ pygame.init()
 
 FPS = pygame.time.Clock()
 
+pygame.mixer.music.load("sounds/background.wav")
+pygame.mixer.music.play(-1)
+
 HEIGHT = 800
 WIDTH = 1200
 
@@ -135,6 +138,8 @@ while playing:
         main_display.blit(bonus[0], bonus[1])
 
         if player_rect.colliderect(bonus[1]):
+            explosion_sound = pygame.mixer.Sound('sounds/invaderkilled.wav')
+            explosion_sound.play()
             score += 1
             bonuses.pop(bonuses.index(bonus))
 
@@ -148,5 +153,6 @@ while playing:
             enemies.pop(enemies.index(enemy))
 
     for bonus in bonuses:
+
         if bonus[1].top > HEIGHT:
             bonuses.pop(bonuses.index(bonus))
