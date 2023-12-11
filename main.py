@@ -25,6 +25,7 @@ bg_X1 = 0
 bg_X2 = bg.get_width()
 bg_move = 3
 
+
 IMAGE_PATH = "Goose"
 PLAYER_IMAGES = os.listdir(IMAGE_PATH)
 
